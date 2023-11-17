@@ -1,0 +1,110 @@
+root@1f1480e8c7a2:~/INFINEL/build# ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 208360 76800 n n n n
++---------------------------------------------------------+
+|                      Graph Info                         |
++--------------------------+------------------------------+
+| Name                     |                    RMAT26-LT |
++--------------------------+------------------------------+
+| Graph Size               |      4404855604    (4.1 GiB) |
++--------------------------+------------------------------+
+| # of vertices            |        31427813     (31.4 M) |
++--------------------------+------------------------------+
+| # of edges               |      1044204680      (1.0 G) |
++--------------------------+------------------------------+
+log > tl_main.cpp:80
+initializing...
+log > tl_main.cpp:87
+query start...
+kernel_iteration: 1 element_counter: 876585307 completed_block: 0/1280
+kernel_iteration: 2 element_counter: 868987110 completed_block: 0/1280
+kernel_iteration: 3 element_counter: 852836970 completed_block: 0/1280
+kernel_iteration: 4 element_counter: 870542387 completed_block: 0/1280
+kernel_iteration: 5 element_counter: 868796720 completed_block: 0/1280
+kernel_iteration: 6 element_counter: 848626286 completed_block: 0/1280
+kernel_iteration: 7 element_counter: 853655440 completed_block: 0/1280
+kernel_iteration: 8 element_counter: 866807261 completed_block: 0/1280
+kernel_iteration: 9 element_counter: 854630141 completed_block: 0/1280
+kernel_iteration: 10 element_counter: 842219130 completed_block: 0/1280
+kernel_iteration: 11 element_counter: 862175072 completed_block: 0/1280
+kernel_iteration: 12 element_counter: 876731904 completed_block: 0/1280
+kernel_iteration: 13 element_counter: 882395006 completed_block: 0/1280
+kernel_iteration: 14 element_counter: 887700916 completed_block: 0/1280
+kernel_iteration: 15 element_counter: 873177378 completed_block: 0/1280
+kernel_iteration: 16 element_counter: 867181260 completed_block: 0/1280
+kernel_iteration: 17 element_counter: 861288704 completed_block: 0/1280
+kernel_iteration: 18 element_counter: 858710566 completed_block: 0/1280
+kernel_iteration: 19 element_counter: 855875352 completed_block: 0/1280
+kernel_iteration: 20 element_counter: 845002868 completed_block: 0/1280
+kernel_iteration: 21 element_counter: 850564994 completed_block: 0/1280
+kernel_iteration: 22 element_counter: 861609153 completed_block: 0/1280
+kernel_iteration: 23 element_counter: 883635941 completed_block: 0/1280
+kernel_iteration: 24 element_counter: 883431415 completed_block: 0/1280
+kernel_iteration: 25 element_counter: 876125693 completed_block: 0/1280
+kernel_iteration: 26 element_counter: 872869626 completed_block: 0/1280
+kernel_iteration: 27 element_counter: 871585378 completed_block: 0/1280
+kernel_iteration: 28 element_counter: 885794704 completed_block: 0/1280
+kernel_iteration: 29 element_counter: 849175148 completed_block: 0/1280
+kernel_iteration: 30 element_counter: 867523569 completed_block: 0/1280
+kernel_iteration: 31 element_counter: 865545449 completed_block: 0/1280
+kernel_iteration: 32 element_counter: 866425574 completed_block: 0/1280
+kernel_iteration: 33 element_counter: 863765658 completed_block: 0/1280
+kernel_iteration: 34 element_counter: 865326188 completed_block: 0/1280
+kernel_iteration: 35 element_counter: 851213465 completed_block: 0/1280
+kernel_iteration: 36 element_counter: 859357779 completed_block: 0/1280
+kernel_iteration: 37 element_counter: 851488017 completed_block: 0/1280
+kernel_iteration: 38 element_counter: 869289212 completed_block: 0/1280
+kernel_iteration: 39 element_counter: 872273130 completed_block: 0/1280
+kernel_iteration: 40 element_counter: 860746658 completed_block: 0/1280
+kernel_iteration: 41 element_counter: 877989672 completed_block: 0/1280
+kernel_iteration: 42 element_counter: 887847999 completed_block: 0/1280
+kernel_iteration: 43 element_counter: 869409335 completed_block: 0/1280
+kernel_iteration: 44 element_counter: 869363450 completed_block: 0/1280
+kernel_iteration: 45 element_counter: 878117620 completed_block: 0/1280
+kernel_iteration: 46 element_counter: 877372430 completed_block: 0/1280
+kernel_iteration: 47 element_counter: 866638495 completed_block: 0/1280
+kernel_iteration: 48 element_counter: 861838015 completed_block: 0/1280
+kernel_iteration: 49 element_counter: 874594708 completed_block: 0/1280
+kernel_iteration: 50 element_counter: 863454430 completed_block: 0/1280
+kernel_iteration: 51 element_counter: 863863715 completed_block: 0/1280
+kernel_iteration: 52 element_counter: 864381698 completed_block: 2/1280
+kernel_iteration: 53 element_counter: 854191259 completed_block: 4/1280
+kernel_iteration: 54 element_counter: 847506075 completed_block: 11/1280
+kernel_iteration: 55 element_counter: 839790505 completed_block: 19/1280
+kernel_iteration: 56 element_counter: 847002857 completed_block: 29/1280
+kernel_iteration: 57 element_counter: 827972146 completed_block: 49/1280
+kernel_iteration: 58 element_counter: 823340125 completed_block: 78/1280
+kernel_iteration: 59 element_counter: 793838657 completed_block: 107/1280
+kernel_iteration: 60 element_counter: 785389110 completed_block: 142/1280
+kernel_iteration: 61 element_counter: 761398359 completed_block: 192/1280
+kernel_iteration: 62 element_counter: 740896007 completed_block: 246/1280
+kernel_iteration: 63 element_counter: 706123490 completed_block: 310/1280
+kernel_iteration: 64 element_counter: 679139326 completed_block: 382/1280
+kernel_iteration: 65 element_counter: 664211191 completed_block: 429/1280
+kernel_iteration: 66 element_counter: 627302141 completed_block: 483/1280
+kernel_iteration: 67 element_counter: 603834491 completed_block: 534/1280
+kernel_iteration: 68 element_counter: 591864205 completed_block: 575/1280
+kernel_iteration: 69 element_counter: 566895954 completed_block: 626/1280
+kernel_iteration: 70 element_counter: 561493814 completed_block: 663/1280
+kernel_iteration: 71 element_counter: 555599751 completed_block: 702/1280
+kernel_iteration: 72 element_counter: 540016493 completed_block: 735/1280
+kernel_iteration: 73 element_counter: 526310293 completed_block: 760/1280
+kernel_iteration: 74 element_counter: 521434710 completed_block: 782/1280
+kernel_iteration: 75 element_counter: 515271897 completed_block: 803/1280
+kernel_iteration: 76 element_counter: 508877906 completed_block: 821/1280
+kernel_iteration: 77 element_counter: 500795142 completed_block: 837/1280
+kernel_iteration: 78 element_counter: 486993537 completed_block: 871/1280
+kernel_iteration: 79 element_counter: 474472841 completed_block: 901/1280
+kernel_iteration: 80 element_counter: 452685723 completed_block: 943/1280
+kernel_iteration: 81 element_counter: 430985248 completed_block: 997/1280
+kernel_iteration: 82 element_counter: 403094812 completed_block: 1069/1280
+kernel_iteration: 83 element_counter: 367705810 completed_block: 1152/1280
+kernel_iteration: 84 element_counter: 221887046 completed_block: 1280/1280
+dmesg > tl_procedure.cu:50
+Sync device [0]: 64684865017 triangles
+log > tl_procedure.cu:182
+Result: 64684865017
+log > tl_main.cpp:90
+Elapsed time: 176.443113 sec.
+log > tl_main.cpp:93
+finalizing...
+log > tl_main.cpp:96
+end

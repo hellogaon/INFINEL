@@ -1,0 +1,35 @@
+root@1f1480e8c7a2:~/INFINEL/build# ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 n n n n
++---------------------------------------------------------+
+|                      Graph Info                         |
++--------------------------+------------------------------+
+| Name                     |                    RMAT24-LT |
++--------------------------+------------------------------+
+| Graph Size               |      1095324372    (1.0 GiB) |
++--------------------------+------------------------------+
+| # of vertices            |         8651280      (8.7 M) |
++--------------------------+------------------------------+
+| # of edges               |       258031454    (258.0 M) |
++--------------------------+------------------------------+
+log > tl_main.cpp:80
+initializing...
+log > tl_main.cpp:87
+query start...
+kernel_iteration: 1 element_counter: 1324921550 completed_block: 0/1280
+kernel_iteration: 2 element_counter: 1324712915 completed_block: 0/1280
+kernel_iteration: 3 element_counter: 1324859445 completed_block: 0/1280
+kernel_iteration: 4 element_counter: 1324974831 completed_block: 0/1280
+kernel_iteration: 5 element_counter: 1324921659 completed_block: 0/1280
+kernel_iteration: 6 element_counter: 1325191272 completed_block: 215/1280
+kernel_iteration: 7 element_counter: 1323849408 completed_block: 736/1280
+kernel_iteration: 8 element_counter: 1320644650 completed_block: 860/1280
+kernel_iteration: 9 element_counter: 1280335852 completed_block: 1280/1280
+dmesg > tl_procedure.cu:50
+Sync device [0]: 11874411582 triangles
+log > tl_procedure.cu:182
+Result: 11874411582
+log > tl_main.cpp:90
+Elapsed time: 18.540113 sec.
+log > tl_main.cpp:93
+finalizing...
+log > tl_main.cpp:96
+end
