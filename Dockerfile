@@ -1,6 +1,6 @@
 FROM nvidia/cuda:11.6.2-cudnn8-devel-ubuntu20.04
 
-RUN apt-get update && apt install -y wget
+RUN apt-get update && apt install -y wget git
 
 # install g++
 RUN apt-get install -y gcc-7 g++-7 build-essential
@@ -22,9 +22,9 @@ RUN ./b2 install
 ENV LD_LIBRARY_PATH=/root/local/lib:$LD_LIBRARY_PATH
 
 # build INFINEL
+WORKDIR /root
+RUN git clone https://github.com/hellogaon/INFINEL.git
 WORKDIR /root/INFINEL
-COPY ./ ./
-RUN rm -r build
 RUN mkdir build
 WORKDIR /root/INFINEL/build
 RUN cmake ../
