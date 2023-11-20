@@ -136,11 +136,11 @@ Query Parameters
 --------
 ### Command
 ```
-./tl-infinel <GRAPH_NAME> <GRAPH_PATH> \
-             <GPU_MEMORY_BUF_SIZE:MB> \
-             <CHUNK_NUM> <CHUNK_SIZE:BYTE> \
-             <LOAD_BALANCE_MODE_FLAG> <DOUBLE_BUFFERING_MODE_FLAG> \
-             <ONLY_KERNEL_MODE_FLAG> <VERIFICATION_MODE_FLAG>
+$ ./tl-infinel <GRAPH_NAME> <GRAPH_PATH> \
+               <GPU_MEMORY_BUF_SIZE:MB> \
+               <CHUNK_NUM> <CHUNK_SIZE:BYTE> \
+               <LOAD_BALANCE_MODE_FLAG> <DOUBLE_BUFFERING_MODE_FLAG> \
+               <ONLY_KERNEL_MODE_FLAG> <VERIFICATION_MODE_FLAG>
 ```
 
 ### Input graph parameter
@@ -167,7 +167,7 @@ Query Parameters
 - **ONLY_KERNEL_MODE_FLAG($8):** Whether to use mode to get kernel execution time. `(y/n)`
 - **VERIFICATION_MODE_FLAG($9):** Whether to use validation and full triangle list output mode. `(y/n)`
 
-Paramemter Setting Guide
+Parameters Setting Guide
 --------
 
 **GPU_MEMORY_BUF_SIZE:MB($3):** Set not to exceed the GPU memory of the equipped GPU. We recommend maximizing the GPU memory but setting the parameters with 1-2 GB of free space. `e.g., 78000 (for A100 with 80 GB GPU memory)`
