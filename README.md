@@ -1,7 +1,6 @@
 # INFINEL: An efficient GPU-based processing method for unpredictable large output graph queries [PPoPP'24]
 
 This repository contains code for our paper INFINEL, an efficient GPU-based processing method for unpredictable large output graph queries. We conducted several experiments using INFINEL on the triangle listing query, which is a representative query for unpredictable large output queries. This repository provides most of the experiments performed in the paper.
-<br/>
 
 Prerequisite
 --------
