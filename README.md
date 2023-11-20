@@ -42,7 +42,7 @@ Getting Started Guide
 
 **1. Clone the source code**
 ```
-$ git clone git clone https://github.com/hellogaon/INFINEL.git
+$ git clone https://github.com/hellogaon/INFINEL.git
 $ cd INFINEL
 ```
 
