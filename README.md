@@ -16,7 +16,7 @@ Make sure you have installed all of the following prerequisites on your developm
 - Nvidia Driver 510.39.01 or higher
 
 ### Run with docker
-- Docker 19.03 or later
+- Docker 24.0.2 or later
 - CUDA Toolkit 11.6 or later
 - Nvidia Driver 510.39.01 or higher
 - NVIDIA Container Toolkit
@@ -102,10 +102,10 @@ $ docker build --tag infinel .
 ```
 # Change {/your/dataset/path} to your dataset storage path
 
-$ docker run -it --name infinel 
-                 --runtime=nvidia 
-                 --gpus all 
-                 -v /your/dataset/path:/var/INFINEL/dataset 
+$ docker run -it --name infinel \
+                 --runtime=nvidia \
+                 --gpus all \
+                 -v /your/dataset/path:/var/INFINEL/dataset \
                  infinel
 ```
 
@@ -136,10 +136,10 @@ Query Parameters
 --------
 ### Command
 ```
-./tl-infinel <GRAPH_NAME> <GRAPH_PATH>
-             <GPU_MEMORY_BUF_SIZE:MB> 
-             <CHUNK_NUM> <CHUNK_SIZE:BYTE>
-             <LOAD_BALANCE_MODE_FLAG> <DOUBLE_BUFFERING_MODE_FLAG>
+./tl-infinel <GRAPH_NAME> <GRAPH_PATH> \
+             <GPU_MEMORY_BUF_SIZE:MB> \
+             <CHUNK_NUM> <CHUNK_SIZE:BYTE> \
+             <LOAD_BALANCE_MODE_FLAG> <DOUBLE_BUFFERING_MODE_FLAG> \
              <ONLY_KERNEL_MODE_FLAG> <VERIFICATION_MODE_FLAG>
 ```
 
