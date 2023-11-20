@@ -28,10 +28,10 @@ Hardware Setting
 --------
 The hardware specifications used in the paper are shown below.
 - **OS:** Ubuntu 20.04
-- **CPU:** 16-core 3.0GHz CPU * 2
+- **CPU:** 16-core 3.0 GHz CPU * 2
 - **GPU:** A100 with a capacity of 80 GB
 - **Memory:** 1 TB
-- **SSD:** PCI-E SSD 6.4TB
+- **SSD:** PCI-E SSD 6.4 TB
 
 To run all experiments shown in the paper with the almost same parameters, an environment with 64 GB or more of main memory and 48 GB or more of GPU memory is required. If you are equipped with a GPU with less GPU memory than 48 GB, you can achieve similar results by adjusting the parameters. The installed GPU must be Compute Capability 6.0 or later, and has been verified to work with NVIDIA A100, NVIDIA TITAN V GPUs.
 
@@ -118,17 +118,17 @@ $ ./tl-infinel RMAT08 /root/INFINEL/dataset/sample 10000 1000000 12 n n n y
 Loading Datasets
 --------
 
-The datasets used in the experiments can be downloaded [here](). Due to capacity and licensing issues, only some datasets (RMAT24, RMAT26) are available for download. Please load `*.graph_info` and `*.graph` files without any subfolders in the dataset path.
+The datasets used in the experiments can be downloaded [here](https://figshare.com/articles/dataset/INFINEL_dataset/24584862). Due to capacity and licensing issues, only some datasets (RMAT24, RMAT26) are available for download. Each dataset is 710 MB and 3 GB in size and takes about 4 and 20 minutes to download, respectively. Please load `*.graph_info` and `*.graph` files without any subfolders in the dataset path. 
 ```
 $ cd /your/dataset/path
 
 # Download RMAT24 dataset
-$ wget
-$ tar -xvf
+$ wget -O RMAT24.tar https://figshare.com/ndownloader/files/43187529
+$ tar -xvf RMAT24.tar
 
 # Download RMAT26 dataset
-$ wget
-$ tar -xvf
+$ wget -O RMAT26.tar https://figshare.com/ndownloader/files/43187535
+$ tar -xvf RMAT26.tar
 ```
 
 
@@ -188,7 +188,8 @@ We present how to reproduce the experimental results presented in the paper. You
 ### INFINEL, INFINEL-SD query execution time (Figure 6, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%206))
 ```
 # GPU output buffer size: 16 GB
-# chunk size: 1.2 KB
+# Chunk size: 1.2 KB
+# Total output size: 142.5 GB, 776.2 GB
 
 # 1) INFINEL with RMAT24 dataset (19 sec)
 $ ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 n n n n
@@ -204,7 +205,8 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y y n n
 ###  INFINEL kernel execution time (Table 2, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Table%202))
 ```
 # GPU output buffer size: 16 GB
-# chunk size: 1.2 KB
+# Chunk size: 1.2 KB
+# Total output size: 142.5 GB, 776.2 GB
 
 # 1) INFINEL(K) with RMAT24 dataset (7.3 sec)
 $ ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 n n y n
@@ -215,7 +217,8 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n y n
 ###  INFINEL kernel execution time varying output buffer size (Figure 7a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%207))
 ```
 # GPU output buffer size: 32 GB, 16 GB, 8 GB, 4 GB
-# chunk size: 1.2 KB
+# Chunk size: 1.2 KB
+# Total output size: 776.2 GB
 
 # 1) INFINEL(K) with output buffer size of 32 GB (50 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 26667500 1200 n n y n
@@ -230,7 +233,8 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 3335000 1200 n n y n
 ###  INFINEL query execution time varying output buffer size (Figure 8a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%208a))
 ```
 # GPU output buffer size: 32 GB, 16 GB, 8 GB, 4 GB, 2 GB, 1 GB
-# chunk size: 1.2 KB
+# Chunk size: 1.2 KB
+# Total output size: 776.2 GB
 
 # 1) INFINEL with output buffer size of 32 GB (111.4 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 26667500 1200 n n n n
@@ -238,18 +242,19 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 26667500 1200 n n n n
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n n n
 # 3) INFINEL with output buffer size of 8 GB (112.4 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 6667500 1200 n n n n
-# 4) INFINEL(K) with output buffer size of 4 GB (114.1 sec)
+# 4) INFINEL with output buffer size of 4 GB (114.1 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 3335000 1200 n n n n
-# 5) INFINEL(K) with output buffer size of 2 GB (119.6 sec)
+# 5) INFINEL with output buffer size of 2 GB (119.6 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 1667500 1200 n n n n
-# 6) INFINEL(K) with output buffer size of 1 GB (137.9 sec)
+# 6) INFINEL with output buffer size of 1 GB (137.9 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 835000 1200 n n n n
 ```
 
 ###  INFINEL query execution time varying chunk size (Figure 8b, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%208b))
 ```
 # GPU output buffer size: 16 GB
-# chunk size: 0.3 KB, 1.2 KB, 4.8 KB, 19.2 KB, 76.8 KB
+# Chunk size: 0.3 KB, 1.2 KB, 4.8 KB, 19.2 KB, 76.8 KB
+# Total output size: 776.2 GB
 
 # 1) INFINEL with chunk size of 0.3 KB (112.7 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 53340000 300 n n n n
@@ -266,10 +271,11 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 208360 76800 n n n n
 ###  INFINEL performance breakdown (Figure 9a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%209))
 ```
 # GPU output buffer size: 16 GB
-# chunk size: 1.2 KB
-# Idea #1: Chunk allocation per thread and kernel context for stop and restart
-# Idea #2: Thread block segmentation
-# Idea #3: Double buffering
+# Chunk size: 1.2 KB
+# Total output size: 776.2 GB
+# Idea #1: Chunk allocation per thread and kernel context for stop and restart (Section 3)
+# Idea #2: Thread block segmentation (Section 4.1)
+# Idea #3: Double buffering (Section 4.2)
 
 # 1) Use Idea #1 (112 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n n n
