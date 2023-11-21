@@ -9,7 +9,7 @@ Make sure you have installed all of the following prerequisites on your developm
 
 ### Run locally
 - g++ 7.5.0
-- Cmake 3.10
+- CMake 3.10
 - Boost 1.77.0
 - CUDA Toolkit 11.6 or later
 - Nvidia Driver 510.39.01 or higher
