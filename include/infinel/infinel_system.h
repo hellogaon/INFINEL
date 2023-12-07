@@ -3,6 +3,7 @@
 #include <infinel/chunk_scheduler.cuh>
 #include <infinel/kernel_executor.cuh>
 #include <infinel/kernel_buffer_manager.cuh>
+#include <cstdio>
 #include <queue>
 
 namespace infinel {
