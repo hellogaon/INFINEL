@@ -162,7 +162,7 @@ void init_tl_query(
     q->qryopt.WA_opt.WA_size_per_device = sizeof(uint64_t);
     q->qryopt.enable_usrbuf = true;
     q->qryopt.num_streams = 1;
-    q->qryopt.pinned_buffer_size = ash::GiB(10);
+    q->qryopt.pinned_buffer_size = ash::GiB(20);
     q->qryopt.device_buffer_size = args->device_buffer_size;
 
     q->qryproc.set_RA_size = tl_set_RA_size;
