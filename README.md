@@ -196,7 +196,7 @@ Parameters Setting Guide
 **GPU_MEMORY_BUF_SIZE:MB($3):** Set not to exceed the GPU memory of the equipped GPU. We recommend maximizing the GPU memory but setting the parameters with 1-2 GB of free space. `e.g., 78000 (for A100 with 80 GB GPU memory)`
 
 
-**CHUNK_NUM($4), CHUNK_SIZE($5):** Use `CHUNK_NUM * CHUNK_SIZE` bytes as an GPU output buffer in GPU memory. The size of the GPU output buffer can be allocated within **GPU_MEMORY_BUF_SIZE($3)** minus the size of the memory used to perform the query. For example, for RMAT24, can use approximately **GPU_MEMORY_BUF_SIZE($3)** - 5,000 MB as the maximum GPU output buffer size, and for RMAT26 datasets, can use approximately **GPU_MEMORY_BUF_SIZE($3)** - 9,000 MB as the maximum GPU output buffer size. If you want to run the RMAT26 dataset with **GPU_MEMORY_BUF_SIZE($3)** set to `22000`, the GPU output buffer size cannot be larger than 13 GB.
+**CHUNK_NUM($4), CHUNK_SIZE($5):** Use `CHUNK_NUM * CHUNK_SIZE` bytes as an GPU output buffer in GPU memory. The size of the GPU output buffer can be allocated within **GPU_MEMORY_BUF_SIZE($3)** minus the size of the memory used to perform the query. For example, for RMAT24, can use approximately **GPU_MEMORY_BUF_SIZE($3)** - 5,000 MB as the maximum GPU output buffer size, and for RMAT26, can use approximately **GPU_MEMORY_BUF_SIZE($3)** - 9,000 MB as the maximum GPU output buffer size. If you want to run the RMAT26 dataset with **GPU_MEMORY_BUF_SIZE($3)** set to `22000`, the GPU output buffer size cannot be larger than 13 GB.
 
 **CHUNK_NUM($4):** It is necessary to be set to at least the number of GPU kernel threads.
 
