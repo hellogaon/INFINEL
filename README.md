@@ -273,13 +273,10 @@ $ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n n y n
 
 # 1) INFINEL(K) with output buffer size of 32 GB (50 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 26667500 1200 n n y n
-
 # 2) INFINEL(K) with output buffer size of 16 GB (50 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n y n
-
 # 3) INFINEL(K) with output buffer size of 8 GB (51 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 6667500 1200 n n y n
-
 # 4) INFINEL(K) with output buffer size of 4 GB (52 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 3335000 1200 n n y n
 ```
@@ -292,19 +289,14 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 3335000 1200 n n y n
 
 # 1) INFINEL with output buffer size of 32 GB (111.4 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 26667500 1200 n n n n
-
 # 2) INFINEL with output buffer size of 16 GB (111.5 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n n n
-
 # 3) INFINEL with output buffer size of 8 GB (112.4 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 6667500 1200 n n n n
-
 # 4) INFINEL with output buffer size of 4 GB (114.1 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 3335000 1200 n n n n
-
 # 5) INFINEL with output buffer size of 2 GB (119.6 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 1667500 1200 n n n n
-
 # 6) INFINEL with output buffer size of 1 GB (137.9 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 835000 1200 n n n n
 ```
@@ -317,16 +309,12 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 835000 1200 n n n n
 
 # 1) INFINEL with chunk size of 0.3 KB (112.7 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 53340000 300 n n n n
-
 # 2) INFINEL with chunk size of 1.2 KB (111.5 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n n n
-
 # 3) INFINEL with chunk size of 4.8 KB (112.7 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 3333750 4800 n n n n
-
 # 4) INFINEL with chunk size of 19.2 KB (120.0 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 833438 19200 n n n n
-
 # 5) INFINEL with chunk size of 76.8 KB (176.4 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 208360 76800 n n n n
 ```
@@ -342,13 +330,10 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 208360 76800 n n n n
 
 # 1) Use Idea #1 with RMAT26 dataset (112 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n n n
-
 # 2) Use Idea #1 and #2 with RMAT26 dataset (107 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y n n n
-
 # 3) Use Idea #1 and #3 with RMAT26 dataset (70 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n y n n
-
 # 4) Use Idea #1, #2 and #3 with RMAT26 dataset (65 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y y n n
 ```
@@ -364,13 +349,10 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y y n n
 
 # 1) Use Idea #1 with Twitter dataset (139 sec)
 $ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n n n n
-
 # 2) Use Idea #1 and #2 with Twitter dataset (128 sec)
 $ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 y n n n
-
 # 3) Use Idea #1 and #3 with Twitter dataset (108 sec)
 $ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n y n n
-
 # 4) Use Idea #1, #2 and #3 with Twitter dataset (97 sec)
 $ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 y y n n
 ```
