@@ -208,7 +208,7 @@ Evaluation and Expected Results
 
 We present how to reproduce the experimental results presented in the paper. You can experiment with all the queries used in the paper. The following query was experimented on an A100 GPU with 80 GB of GPU memory. Please note that the **GPU_MEMORY_BUF_SIZE($3)**, **CHUNK_NUM($4)**, and **CHUNK_SIZE($5)** parameters must be changed depending on your installed GPU. If you have a GPU with more than 48 GB of GPU memory, changing only **GPU_MEMORY_BUF_SIZE($3)** should work. The time in parentheses indicates the execution time for each query in our experimental environment.
 
-### INFINEL, INFINEL-SD query execution time (Figure 6a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%206a))
+### INFINEL query execution time with synthetic datasets (Figure 6a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%206a))
 ```
 # GPU output buffer size: 16 GB
 # Chunk size: 1.2 KB
@@ -227,7 +227,7 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y y n n
 $ ./tl-infinel RMAT27 /var/INFINEL/dataset 78000 13335000 1200 y y n n
 ```
 
-### INFINEL, INFINEL-SD query execution time (Figure 6b, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%206b))
+### INFINEL query execution time with real-world datasets (Figure 6b, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%206b))
 ```
 # GPU output buffer size: 16 GB
 # Chunk size: 1.2 KB
@@ -319,7 +319,7 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 833438 19200 n n n n
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 208360 76800 n n n n
 ```
 
-###  INFINEL performance breakdown (Figure 9a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%209a))
+###  INFINEL performance breakdown with synthetic datasets (Figure 9a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%209a))
 ```
 # GPU output buffer size: 16 GB
 # Chunk size: 1.2 KB
@@ -341,7 +341,7 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n y n n
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y y n n
 ```
 
-###  INFINEL performance breakdown (Figure 9b, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%209b))
+###  INFINEL performance breakdown with real-world datasets (Figure 9b, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%209b))
 ```
 # GPU output buffer size: 16 GB
 # Chunk size: 1.2 KB
