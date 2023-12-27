@@ -1,0 +1,30 @@
+root@5a2ae6fbf288:~/INFINEL/build# ./tl-infinel Friendster /var/INFINEL/dataset 78000 13335000 1200 n n n n
++---------------------------------------------------------+
+|                      Graph Info                         |
++--------------------------+------------------------------+
+| Name                     |                Friendster-LT |
++--------------------------+------------------------------+
+| Graph Size               |      7743956808    (7.2 GiB) |
++--------------------------+------------------------------+
+| # of vertices            |        65608366     (65.6 M) |
++--------------------------+------------------------------+
+| # of edges               |      1806067135      (1.8 G) |
++--------------------------+------------------------------+
+log > tl_main.cpp:80
+initializing...
+log > tl_main.cpp:87
+query start...
+kernel_iteration: 1 element_counter: 1323251309 completed_block: 0/1280
+kernel_iteration: 2 element_counter: 1323459384 completed_block: 0/1280
+kernel_iteration: 3 element_counter: 1325304385 completed_block: 873/1280
+kernel_iteration: 4 element_counter: 201709064 completed_block: 1280/1280
+dmesg > tl_procedure.cu:50
+Sync device [0]: 4173724142 triangles
+log > tl_procedure.cu:182
+Result: 4173724142
+log > tl_main.cpp:90
+Elapsed time: 19.397735 sec.
+log > tl_main.cpp:93
+finalizing...
+log > tl_main.cpp:96
+end

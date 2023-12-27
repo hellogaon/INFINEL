@@ -1,0 +1,27 @@
+root@5a2ae6fbf288:~/INFINEL/build# ./tl-infinel LiveJournal /var/INFINEL/dataset 78000 13335000 1200 n n y n
++---------------------------------------------------------+
+|                      Graph Info                         |
++--------------------------+------------------------------+
+| Name                     |               LiveJournal-LT |
++--------------------------+------------------------------+
+| Graph Size               |       210147624  (200.4 MiB) |
++--------------------------+------------------------------+
+| # of vertices            |         4846609      (4.8 M) |
++--------------------------+------------------------------+
+| # of edges               |        42851237     (42.9 M) |
++--------------------------+------------------------------+
+log > tl_main.cpp:80
+initializing...
+log > tl_main.cpp:87
+query start...
+kernel_iteration: 1 element_counter: 285730264 completed_block: 1280/1280
+dmesg > tl_procedure.cu:50
+Sync device [0]: 285730264 triangles
+log > tl_procedure.cu:182
+Result: 285730264
+log > tl_main.cpp:90
+Elapsed time: 0.323703 sec.
+log > tl_main.cpp:93
+finalizing...
+log > tl_main.cpp:96
+end

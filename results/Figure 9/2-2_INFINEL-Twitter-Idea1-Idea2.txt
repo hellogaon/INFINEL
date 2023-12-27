@@ -1,0 +1,53 @@
+root@5a2ae6fbf288:~/INFINEL/build# ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 y n n n
++---------------------------------------------------------+
+|                      Graph Info                         |
++--------------------------+------------------------------+
+| Name                     |                twitter_rv-LT |
++--------------------------+------------------------------+
+| Graph Size               |      5106827276    (4.8 GiB) |
++--------------------------+------------------------------+
+| # of vertices            |        41652230     (41.7 M) |
++--------------------------+------------------------------+
+| # of edges               |      1202513046      (1.2 G) |
++--------------------------+------------------------------+
+log > tl_main.cpp:80
+initializing...
+log > tl_main.cpp:87
+query start...
+kernel_iteration: 1 element_counter: 1324389634 completed_block: 0/1280
+kernel_iteration: 2 element_counter: 1324509272 completed_block: 0/1280
+kernel_iteration: 3 element_counter: 1324700994 completed_block: 0/1280
+kernel_iteration: 4 element_counter: 1324751137 completed_block: 0/1280
+kernel_iteration: 5 element_counter: 1324774690 completed_block: 0/1280
+kernel_iteration: 6 element_counter: 1324723964 completed_block: 0/1280
+kernel_iteration: 7 element_counter: 1324823484 completed_block: 0/1280
+kernel_iteration: 8 element_counter: 1324830455 completed_block: 0/1280
+kernel_iteration: 9 element_counter: 1324839460 completed_block: 0/1280
+kernel_iteration: 10 element_counter: 1324852148 completed_block: 0/1280
+kernel_iteration: 11 element_counter: 1324902686 completed_block: 0/1280
+kernel_iteration: 12 element_counter: 1324878929 completed_block: 0/1280
+kernel_iteration: 13 element_counter: 1325050479 completed_block: 0/1280
+kernel_iteration: 14 element_counter: 1324946954 completed_block: 0/1280
+kernel_iteration: 15 element_counter: 1324950824 completed_block: 0/1280
+kernel_iteration: 16 element_counter: 1325083800 completed_block: 0/1280
+kernel_iteration: 17 element_counter: 1325111603 completed_block: 0/1280
+kernel_iteration: 18 element_counter: 1325214147 completed_block: 229/1280
+kernel_iteration: 19 element_counter: 1323764031 completed_block: 42/1280
+kernel_iteration: 20 element_counter: 1324438810 completed_block: 448/1280
+kernel_iteration: 21 element_counter: 1322580810 completed_block: 448/1280
+kernel_iteration: 22 element_counter: 1322561402 completed_block: 448/1280
+kernel_iteration: 23 element_counter: 1322553505 completed_block: 448/1280
+kernel_iteration: 24 element_counter: 1322586017 completed_block: 448/1280
+kernel_iteration: 25 element_counter: 1322551809 completed_block: 448/1280
+kernel_iteration: 26 element_counter: 1322542700 completed_block: 462/1280
+kernel_iteration: 27 element_counter: 394003120 completed_block: 1280/1280
+dmesg > tl_procedure.cu:50
+Sync device [0]: 34824916864 triangles
+log > tl_procedure.cu:182
+Result: 34824916864
+log > tl_main.cpp:90
+Elapsed time: 128.485698 sec.
+log > tl_main.cpp:93
+finalizing...
+log > tl_main.cpp:96
+end

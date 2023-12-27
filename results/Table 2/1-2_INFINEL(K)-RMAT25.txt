@@ -1,0 +1,44 @@
+root@5a2ae6fbf288:~/INFINEL/build# ./tl-infinel RMAT25 /var/INFINEL/dataset 78000 13335000 1200 n n y n
++---------------------------------------------------------+
+|                      Graph Info                         |
++--------------------------+------------------------------+
+| Name                     |                    RMAT25-LT |
++--------------------------+------------------------------+
+| Graph Size               |      2217203944    (2.1 GiB) |
++--------------------------+------------------------------+
+| # of vertices            |        17157645     (17.2 M) |
++--------------------------+------------------------------+
+| # of edges               |       523019611    (523.0 M) |
++--------------------------+------------------------------+
+log > tl_main.cpp:80
+initializing...
+log > tl_main.cpp:87
+query start...
+kernel_iteration: 1 element_counter: 1324819155 completed_block: 0/1280
+kernel_iteration: 2 element_counter: 1324786936 completed_block: 0/1280
+kernel_iteration: 3 element_counter: 1324785553 completed_block: 0/1280
+kernel_iteration: 4 element_counter: 1324842177 completed_block: 0/1280
+kernel_iteration: 5 element_counter: 1324866409 completed_block: 0/1280
+kernel_iteration: 6 element_counter: 1324880805 completed_block: 0/1280
+kernel_iteration: 7 element_counter: 1325056606 completed_block: 0/1280
+kernel_iteration: 8 element_counter: 1325031601 completed_block: 0/1280
+kernel_iteration: 9 element_counter: 1325017986 completed_block: 0/1280
+kernel_iteration: 10 element_counter: 1324998419 completed_block: 0/1280
+kernel_iteration: 11 element_counter: 1325084574 completed_block: 22/1280
+kernel_iteration: 12 element_counter: 1325305558 completed_block: 414/1280
+kernel_iteration: 13 element_counter: 1322667152 completed_block: 744/1280
+kernel_iteration: 14 element_counter: 1320598390 completed_block: 858/1280
+kernel_iteration: 15 element_counter: 1319931245 completed_block: 864/1280
+kernel_iteration: 16 element_counter: 1319886906 completed_block: 864/1280
+kernel_iteration: 17 element_counter: 1319871923 completed_block: 897/1280
+kernel_iteration: 18 element_counter: 456852814 completed_block: 1280/1280
+dmesg > tl_procedure.cu:50
+Sync device [0]: 22959284209 triangles
+log > tl_procedure.cu:182
+Result: 22959284209
+log > tl_main.cpp:90
+Elapsed time: 17.908666 sec.
+log > tl_main.cpp:93
+finalizing...
+log > tl_main.cpp:96
+end
