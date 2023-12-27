@@ -214,13 +214,13 @@ We present how to reproduce the experimental results presented in the paper. You
 # Chunk size: 1.2 KB
 # Total output size: 142.5 GB, 275.5 GB, 776.2 GB, 2.0 TB
 
-# 1) INFINEL with synthetic dataset (19, 40, 112, 301 sec)
+# 1) INFINEL with synthetic datasets (19, 40, 112, 301 sec)
 $ ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 n n n n
 $ ./tl-infinel RMAT25 /var/INFINEL/dataset 78000 13335000 1200 n n n n
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n n n
 $ ./tl-infinel RMAT27 /var/INFINEL/dataset 78000 13335000 1200 n n n n
 
-# 2) INFINEL-SD with synthetic dataset (12, 24, 65, 170 sec)
+# 2) INFINEL-SD with synthetic datasets (12, 24, 65, 170 sec)
 $ ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 y y n n
 $ ./tl-infinel RMAT25 /var/INFINEL/dataset 78000 13335000 1200 y y n n
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y y n n
@@ -233,13 +233,13 @@ $ ./tl-infinel RMAT27 /var/INFINEL/dataset 78000 13335000 1200 y y n n
 # Chunk size: 1.2 KB
 # Total output size: 3.4 GB, 7.5 GB, 50.1 GB, 417.9 GB
 
-# 1) INFINEL with real-world dataset (1, 1, 19, 139 sec)
+# 1) INFINEL with real-world datasets (1, 1, 19, 139 sec)
 $ ./tl-infinel LiveJournal /var/INFINEL/dataset 78000 13335000 1200 n n n n
 $ ./tl-infinel Orkut /var/INFINEL/dataset 78000 13335000 1200 n n n n
 $ ./tl-infinel Friendster /var/INFINEL/dataset 78000 13335000 1200 n n n n
 $ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n n n n
 
-# 2) INFINEL-SD with real-world dataset (1, 1, 15, 97 sec)
+# 2) INFINEL-SD with real-world datasets (1, 1, 15, 97 sec)
 $ ./tl-infinel LiveJournal /var/INFINEL/dataset 78000 13335000 1200 y y n n
 $ ./tl-infinel Orkut /var/INFINEL/dataset 78000 13335000 1200 y y n n
 $ ./tl-infinel Friendster /var/INFINEL/dataset 78000 13335000 1200 y y n n
@@ -252,13 +252,13 @@ $ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 y y n n
 # Chunk size: 1.2 KB
 # Total output size: 3.4 GB ~ 2 TB
 
-# 1) INFINEL(K) with synthetic dataset (7.3, 17.9, 50.4, 145.5 sec)
+# 1) INFINEL(K) with synthetic datasets (7.3, 17.9, 50.4, 145.5 sec)
 $ ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 n n y n
 $ ./tl-infinel RMAT25 /var/INFINEL/dataset 78000 13335000 1200 n n y n
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n y n
 $ ./tl-infinel RMAT27 /var/INFINEL/dataset 78000 13335000 1200 n n y n
 
-# 2) INFINEL(K) with real-world dataset (0.3, 0.7, 15.0, 106.7 sec)
+# 2) INFINEL(K) with real-world datasets (0.3, 0.7, 15.0, 106.7 sec)
 $ ./tl-infinel LiveJournal /var/INFINEL/dataset 78000 13335000 1200 n n y n
 $ ./tl-infinel Orkut /var/INFINEL/dataset 78000 13335000 1200 n n y n
 $ ./tl-infinel Friendster /var/INFINEL/dataset 78000 13335000 1200 n n y n
