@@ -117,17 +117,41 @@ $ ./tl-infinel RMAT08 /root/INFINEL/dataset/sample 10000 1000000 12 n n n y
 Loading Datasets
 --------
 
-The datasets used in the experiments can be downloaded [here](https://figshare.com/articles/dataset/INFINEL_dataset/24584862). Due to capacity and licensing issues, only some datasets (RMAT24, RMAT26) are available for download. Each dataset is 710 MB and 3 GB in size and takes about 4 and 20 minutes to download, respectively. Please load `*.graph_info` and `*.graph` files without any subfolders in the dataset path. 
+The datasets used in the experiments can be downloaded [here](https://figshare.com/articles/dataset/INFINEL_dataset/24584862). For real-world datasets such as [LiveJournal](https://snap.stanford.edu/data/com-LiveJournal.html), [Orkut](https://snap.stanford.edu/data/com-Orkut.html), [Friendster](https://snap.stanford.edu/data/com-Friendster.html), and [Twitter](https://anlab-kaist.github.io/traces/WWW2010) datasets, we provide preprocessed data (remove isolated vertices and remove self-loop edges) in CSR format of the original graph data. Please load `*.graph_info` and `*.graph` files without any subfolders in the dataset path. 
 ```
 $ cd /your/dataset/path
 
-# Download RMAT24 dataset
+# Download RMAT24 dataset (710 MB)
 $ wget -O RMAT24.tar https://figshare.com/ndownloader/files/43187529
 $ tar -xvf RMAT24.tar
 
-# Download RMAT26 dataset
+# Download RMAT25 dataset (1.5 GB)
+$ wget -O RMAT25.tar https://figshare.com/ndownloader/files/43824444
+$ tar -xvf RMAT25.tar
+
+# Download RMAT26 dataset (3.0 GB)
 $ wget -O RMAT26.tar https://figshare.com/ndownloader/files/43187535
 $ tar -xvf RMAT26.tar
+
+# Download RMAT27 dataset (6.1 GB)
+$ wget -O RMAT27.tar https://figshare.com/ndownloader/files/43823835
+$ tar -xvf RMAT27.tar
+
+# Download LiveJournal dataset (101 MB)
+$ wget -O LiveJournal.tar https://figshare.com/ndownloader/files/43823820
+$ tar -xvf LiveJournal.tar
+
+# Download Orkut dataset (290 MB)
+$ wget -O Orkut.tar https://figshare.com/ndownloader/files/43823823
+$ tar -xvf Orkut.tar
+
+# Download Friendster dataset (6.3 GB)
+$ wget -O Friendster.tar https://figshare.com/ndownloader/files/43823979
+$ tar -xvf Friendster.tar
+
+# Download Twitter dataset (3.4 GB)
+$ wget -O Twitter.tar https://figshare.com/ndownloader/files/43824720
+$ tar -xvf Twitter.tar
 ```
 
 
@@ -182,35 +206,56 @@ Parameters Setting Guide
 Evaluation and Expected Results
 --------
 
-We present how to reproduce the experimental results presented in the paper. You can experiment with all the queries used in the paper on the RMAT24 and RMAT26 datasets. The following query was experimented on an A100 GPU with 80 GB of GPU memory. Please note that the **GPU_MEMORY_BUF_SIZE($3)**, **CHUNK_NUM($4)**, and **CHUNK_SIZE($5)** parameters must be changed depending on your installed GPU. If you have a GPU with more than 48 GB of GPU memory, changing only **GPU_MEMORY_BUF_SIZE($3)** should work. The time in parentheses indicates the execution time in our experimental environment.
+We present how to reproduce the experimental results presented in the paper. You can experiment with all the queries used in the paper. The following query was experimented on an A100 GPU with 80 GB of GPU memory. Please note that the **GPU_MEMORY_BUF_SIZE($3)**, **CHUNK_NUM($4)**, and **CHUNK_SIZE($5)** parameters must be changed depending on your installed GPU. If you have a GPU with more than 48 GB of GPU memory, changing only **GPU_MEMORY_BUF_SIZE($3)** should work. The time in parentheses indicates the execution time for each query in our experimental environment.
 
 ### INFINEL, INFINEL-SD query execution time (Figure 6, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%206))
 ```
 # GPU output buffer size: 16 GB
 # Chunk size: 1.2 KB
-# Total output size: 142.5 GB, 776.2 GB
+# Total output size: up to 2 TB
 
-# 1) INFINEL with RMAT24 dataset (19 sec)
+# 1) INFINEL with synthetic dataset (19, 40, 112, 301 sec)
 $ ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 n n n n
-# 2) INFINEL with RMAT26 dataset (112 sec)
+$ ./tl-infinel RMAT25 /var/INFINEL/dataset 78000 13335000 1200 n n n n
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n n n
+$ ./tl-infinel RMAT27 /var/INFINEL/dataset 78000 13335000 1200 n n n n
 
-# 3) INFINEL-SD with RMAT24 dataset (12 sec)
+# 2) INFINEL with real-world dataset (1, 1, 19, 139 sec)
+$ ./tl-infinel LiveJournal /var/INFINEL/dataset 78000 13335000 1200 n n n n
+$ ./tl-infinel Orkut /var/INFINEL/dataset 78000 13335000 1200 n n n n
+$ ./tl-infinel Friendster /var/INFINEL/dataset 78000 13335000 1200 n n n n
+$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n n n n
+
+# 3) INFINEL-SD with synthetic dataset (12, 24, 65, 170 sec)
 $ ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 y y n n
-# 4) INFINEL-SD with RMAT26 dataset (170 sec)
+$ ./tl-infinel RMAT25 /var/INFINEL/dataset 78000 13335000 1200 y y n n
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y y n n
+$ ./tl-infinel RMAT27 /var/INFINEL/dataset 78000 13335000 1200 y y n n
+
+# 4) INFINEL-SD with real-world dataset (1, 1, 15, 97 sec)
+$ ./tl-infinel LiveJournal /var/INFINEL/dataset 78000 13335000 1200 y y n n
+$ ./tl-infinel Orkut /var/INFINEL/dataset 78000 13335000 1200 y y n n
+$ ./tl-infinel Friendster /var/INFINEL/dataset 78000 13335000 1200 y y n n
+$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 y y n n
 ```
 
 ###  INFINEL kernel execution time (Table 2, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Table%202))
 ```
 # GPU output buffer size: 16 GB
 # Chunk size: 1.2 KB
-# Total output size: 142.5 GB, 776.2 GB
+# Total output size: up to 2 TB
 
-# 1) INFINEL(K) with RMAT24 dataset (7.3 sec)
+# 1) INFINEL(K) with synthetic dataset (7.3, 17.9, 50.4, 145.5 sec)
 $ ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 n n y n
-# 2) INFINEL(K) with RMAT26 dataset (50.4 sec)
+$ ./tl-infinel RMAT25 /var/INFINEL/dataset 78000 13335000 1200 n n y n
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n y n
+$ ./tl-infinel RMAT27 /var/INFINEL/dataset 78000 13335000 1200 n n y n
+
+# 2) INFINEL(K) with real-world dataset (0.3, 0.7, 15.0, 106.7 sec)
+$ ./tl-infinel LiveJournal /var/INFINEL/dataset 78000 13335000 1200 n n y n
+$ ./tl-infinel Orkut /var/INFINEL/dataset 78000 13335000 1200 n n y n
+$ ./tl-infinel Friendster /var/INFINEL/dataset 78000 13335000 1200 n n y n
+$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n n y n
 ```
 
 ###  INFINEL kernel execution time varying output buffer size (Figure 7a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%207))
@@ -267,23 +312,30 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 833438 19200 n n n n
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 208360 76800 n n n n
 ```
 
-###  INFINEL performance breakdown (Figure 9a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%209))
+###  INFINEL performance breakdown (Figure 9, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%209))
 ```
 # GPU output buffer size: 16 GB
 # Chunk size: 1.2 KB
-# Total output size: 776.2 GB
+# Total output size: 776.2 GB, 417.9 GB
 # Idea #1: Chunk allocation per thread and kernel context for stop and restart (Section 3)
 # Idea #2: Thread block segmentation (Section 4.1)
 # Idea #3: Double buffering (Section 4.2)
 
-# 1) Use Idea #1 (112 sec)
+# 1) Use Idea #1 (112, 139 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n n n
-# 2) Use Idea #1 and #2 (107 sec)
+$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n n n n
+
+# 2) Use Idea #1 and #2 (107, 128 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y n n n
-# 3) Use Idea #1 and #3 (70 sec)
+$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 y n n n
+
+# 3) Use Idea #1 and #3 (70, 108 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n y n n
-# 4) Use Idea #1, #2 and #3 (65 sec)
+$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n y n n
+
+# 4) Use Idea #1, #2 and #3 (65, 97 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y y n n
+$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 y y n n
 ```
 
 
