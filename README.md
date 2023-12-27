@@ -208,11 +208,11 @@ Evaluation and Expected Results
 
 We present how to reproduce the experimental results presented in the paper. You can experiment with all the queries used in the paper. The following query was experimented on an A100 GPU with 80 GB of GPU memory. Please note that the **GPU_MEMORY_BUF_SIZE($3)**, **CHUNK_NUM($4)**, and **CHUNK_SIZE($5)** parameters must be changed depending on your installed GPU. If you have a GPU with more than 48 GB of GPU memory, changing only **GPU_MEMORY_BUF_SIZE($3)** should work. The time in parentheses indicates the execution time for each query in our experimental environment.
 
-### INFINEL, INFINEL-SD query execution time (Figure 6, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%206))
+### INFINEL, INFINEL-SD query execution time (Figure 6a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%206a))
 ```
 # GPU output buffer size: 16 GB
 # Chunk size: 1.2 KB
-# Total output size: up to 2 TB
+# Total output size: 142.5 GB, 275.5 GB, 776.2 GB, 2.0 TB
 
 # 1) INFINEL with synthetic dataset (19, 40, 112, 301 sec)
 $ ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 n n n n
@@ -220,19 +220,26 @@ $ ./tl-infinel RMAT25 /var/INFINEL/dataset 78000 13335000 1200 n n n n
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n n n
 $ ./tl-infinel RMAT27 /var/INFINEL/dataset 78000 13335000 1200 n n n n
 
-# 2) INFINEL with real-world dataset (1, 1, 19, 139 sec)
+# 2) INFINEL-SD with synthetic dataset (12, 24, 65, 170 sec)
+$ ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 y y n n
+$ ./tl-infinel RMAT25 /var/INFINEL/dataset 78000 13335000 1200 y y n n
+$ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y y n n
+$ ./tl-infinel RMAT27 /var/INFINEL/dataset 78000 13335000 1200 y y n n
+```
+
+### INFINEL, INFINEL-SD query execution time (Figure 6b, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%206b))
+```
+# GPU output buffer size: 16 GB
+# Chunk size: 1.2 KB
+# Total output size: 3.4 GB, 7.5 GB, 50.1 GB, 417.9 GB
+
+# 1) INFINEL with real-world dataset (1, 1, 19, 139 sec)
 $ ./tl-infinel LiveJournal /var/INFINEL/dataset 78000 13335000 1200 n n n n
 $ ./tl-infinel Orkut /var/INFINEL/dataset 78000 13335000 1200 n n n n
 $ ./tl-infinel Friendster /var/INFINEL/dataset 78000 13335000 1200 n n n n
 $ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n n n n
 
-# 3) INFINEL-SD with synthetic dataset (12, 24, 65, 170 sec)
-$ ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 y y n n
-$ ./tl-infinel RMAT25 /var/INFINEL/dataset 78000 13335000 1200 y y n n
-$ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y y n n
-$ ./tl-infinel RMAT27 /var/INFINEL/dataset 78000 13335000 1200 y y n n
-
-# 4) INFINEL-SD with real-world dataset (1, 1, 15, 97 sec)
+# 2) INFINEL-SD with real-world dataset (1, 1, 15, 97 sec)
 $ ./tl-infinel LiveJournal /var/INFINEL/dataset 78000 13335000 1200 y y n n
 $ ./tl-infinel Orkut /var/INFINEL/dataset 78000 13335000 1200 y y n n
 $ ./tl-infinel Friendster /var/INFINEL/dataset 78000 13335000 1200 y y n n
@@ -243,7 +250,7 @@ $ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 y y n n
 ```
 # GPU output buffer size: 16 GB
 # Chunk size: 1.2 KB
-# Total output size: up to 2 TB
+# Total output size: 3.4 GB ~ 2 TB
 
 # 1) INFINEL(K) with synthetic dataset (7.3, 17.9, 50.4, 145.5 sec)
 $ ./tl-infinel RMAT24 /var/INFINEL/dataset 78000 13335000 1200 n n y n
@@ -312,32 +319,49 @@ $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 833438 19200 n n n n
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 208360 76800 n n n n
 ```
 
-###  INFINEL performance breakdown (Figure 9, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%209))
+###  INFINEL performance breakdown (Figure 9a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%209a))
 ```
 # GPU output buffer size: 16 GB
 # Chunk size: 1.2 KB
-# Total output size: 776.2 GB, 417.9 GB
+# Total output size: 776.2 GB
 # Idea #1: Chunk allocation per thread and kernel context for stop and restart (Section 3)
 # Idea #2: Thread block segmentation (Section 4.1)
 # Idea #3: Double buffering (Section 4.2)
 
-# 1) Use Idea #1 (112, 139 sec)
+# 1) Use Idea #1 (112 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n n n
-$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n n n n
 
-# 2) Use Idea #1 and #2 (107, 128 sec)
+# 2) Use Idea #1 and #2 (107 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y n n n
-$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 y n n n
 
-# 3) Use Idea #1 and #3 (70, 108 sec)
+# 3) Use Idea #1 and #3 (70 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n y n n
-$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n y n n
 
-# 4) Use Idea #1, #2 and #3 (65, 97 sec)
+# 4) Use Idea #1, #2 and #3 (65 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 y y n n
-$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 y y n n
 ```
 
+###  INFINEL performance breakdown (Figure 9b, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%209b))
+```
+# GPU output buffer size: 16 GB
+# Chunk size: 1.2 KB
+# Total output size: 417.9 GB
+# Idea #1: Chunk allocation per thread and kernel context for stop and restart (Section 3)
+# Idea #2: Thread block segmentation (Section 4.1)
+# Idea #3: Double buffering (Section 4.2)
+
+# 1) Use Idea #1 (139 sec)
+$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n n n n
+
+# 2) Use Idea #1 and #2 (128 sec)
+$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 y n n n
+
+# 3) Use Idea #1 and #3 (108 sec)
+$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n y n n
+
+# 4) Use Idea #1, #2 and #3 (97 sec)
+$ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 y y n n
+```
 
 Experiment Customization
 --------
