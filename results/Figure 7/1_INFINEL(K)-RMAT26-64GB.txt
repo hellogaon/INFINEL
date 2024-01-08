@@ -1,0 +1,39 @@
+root@1f1480e8c7a2:~/INFINEL/build# ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 53335000 1200 n n y n
++---------------------------------------------------------+
+|                      Graph Info                         |
++--------------------------+------------------------------+
+| Name                     |                    RMAT26-LT |
++--------------------------+------------------------------+
+| Graph Size               |      4404855604    (4.1 GiB) |
++--------------------------+------------------------------+
+| # of vertices            |        31427813     (31.4 M) |
++--------------------------+------------------------------+
+| # of edges               |      1044204680      (1.0 G) |
++--------------------------+------------------------------+
+log > tl_main.cpp:80
+initializing...
+log > tl_main.cpp:87
+query start...
+kernel_iteration: 1 element_counter: 5325211596 completed_block: 0/1280
+kernel_iteration: 2 element_counter: 5325243989 completed_block: 0/1280
+kernel_iteration: 3 element_counter: 5325192049 completed_block: 0/1280
+kernel_iteration: 4 element_counter: 5325223540 completed_block: 0/1280
+kernel_iteration: 5 element_counter: 5325060342 completed_block: 0/1280
+kernel_iteration: 6 element_counter: 5325051712 completed_block: 0/1280
+kernel_iteration: 7 element_counter: 5325055416 completed_block: 0/1280
+kernel_iteration: 8 element_counter: 5325071530 completed_block: 14/1280
+kernel_iteration: 9 element_counter: 5325368884 completed_block: 528/1280
+kernel_iteration: 10 element_counter: 5321934595 completed_block: 859/1280
+kernel_iteration: 11 element_counter: 5319941358 completed_block: 864/1280
+kernel_iteration: 12 element_counter: 5319865810 completed_block: 892/1280
+kernel_iteration: 13 element_counter: 796644196 completed_block: 1280/1280
+dmesg > tl_procedure.cu:50
+Sync device [0]: 64684865017 triangles
+log > tl_procedure.cu:182
+Result: 64684865017
+log > tl_main.cpp:90
+Elapsed time: 50.005675 sec.
+log > tl_main.cpp:93
+finalizing...
+log > tl_main.cpp:96
+end
