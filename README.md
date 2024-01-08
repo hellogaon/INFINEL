@@ -32,7 +32,7 @@ The hardware specifications used in the paper are shown below.
 - **Memory:** 1 TB
 - **SSD:** PCI-E SSD 6.4 TB
 
-To run all experiments shown in the paper with the almost same parameters, an environment with 64 GB or more of main memory and 80 GB or more of GPU memory is required. If you are equipped with a GPU with less GPU memory than 80 GB, you can achieve similar results by adjusting the parameters. The installed GPU must be Compute Capability 6.0 or later, and has been verified to work with NVIDIA A100, NVIDIA TITAN V GPUs.
+To run all experiments shown in the paper with the almost same parameters, an environment with 128 GB or more of main memory and 80 GB or more of GPU memory is required. If you are equipped with a GPU with less GPU memory than 80 GB, you can achieve similar results by adjusting the parameters. The installed GPU must be Compute Capability 6.0 or later, and has been verified to work with NVIDIA A100, NVIDIA TITAN V GPUs.
 
 
 Getting Started Guide
