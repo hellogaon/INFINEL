@@ -8,5 +8,5 @@ length=${#chunk_num[@]}
 
 for (( i=0; i<${length}; i++ ));
 do
-  ./tl-infinel RMAT26 /var/INFINEL/dataset 46000 ${chunk_num[$i]} ${chunk_size[$i]} n n n n
+  ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 ${chunk_num[$i]} ${chunk_size[$i]} n n n n
 done
