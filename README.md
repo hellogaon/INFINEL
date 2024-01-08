@@ -45,7 +45,7 @@ $ git clone https://github.com/hellogaon/INFINEL.git
 $ cd INFINEL
 ```
 
-**2. change `CMakeLists.txt` file**
+**2. Change `CMakeLists.txt` file**
 1. Compute Capability setting ([reference](https://developer.nvidia.com/cuda-gpus))
 ```
 # If the installed GPU has a Compute Capability of 8.0,
@@ -83,7 +83,7 @@ $ git clone https://github.com/hellogaon/INFINEL.git
 $ cd INFINEL
 ```
 
-**2. change `CMakeLists.txt` file**
+**2. Change `CMakeLists.txt` file**
 1. Compute Capability setting ([reference](https://developer.nvidia.com/cuda-gpus))
 ```
 # If the installed GPU has a Compute Capability of 8.0,
@@ -93,7 +93,7 @@ list(APPEND CUDA_NVCC_FLAGS
 	-O3 -std=c++14 -Xcompiler -fopenmp)
 ```
 
-**3. Build dockerfile**
+**3. Build Dockerfile**
 ```
 $ docker build --tag infinel .
 ```
@@ -168,8 +168,8 @@ $ ./tl-infinel <GRAPH_NAME> <GRAPH_PATH> \
 
 ### Input graph parameter
 
-- **GRAPH_NAME($1):** graph name. `e.g., RMAT24`
-- **GRAPH_PATH($2):** dataset path. `e.g., /var/INFINEL/dataset`
+- **GRAPH_NAME($1):** Graph name. `e.g., RMAT24`
+- **GRAPH_PATH($2):** Dataset path. `e.g., /var/INFINEL/dataset`
 
 ### GPU Memory parameter
 
