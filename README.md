@@ -155,7 +155,7 @@ $ tar -xvf Twitter.tar
 ```
 
 
-Query Parameters
+Parameter Descriptions
 --------
 ### Command
 ```
