@@ -32,7 +32,7 @@ The hardware specifications used in the paper are shown below.
 - **Memory:** 1 TB
 - **SSD:** PCI-E SSD 6.4 TB
 
-To run all experiments shown in the paper with the almost same parameters, an environment with 64 GB or more of main memory and 48 GB or more of GPU memory is required. If you are equipped with a GPU with less GPU memory than 48 GB, you can achieve similar results by adjusting the parameters. The installed GPU must be Compute Capability 6.0 or later, and has been verified to work with NVIDIA A100, NVIDIA TITAN V GPUs.
+To run all experiments shown in the paper with the almost same parameters, an environment with 64 GB or more of main memory and 80 GB or more of GPU memory is required. If you are equipped with a GPU with less GPU memory than 80 GB, you can achieve similar results by adjusting the parameters. The installed GPU must be Compute Capability 6.0 or later, and has been verified to work with NVIDIA A100, NVIDIA TITAN V GPUs.
 
 
 Getting Started Guide
@@ -171,7 +171,7 @@ $ ./tl-infinel <GRAPH_NAME> <GRAPH_PATH> \
 - **GRAPH_NAME($1):** Graph name. `e.g., RMAT24`
 - **GRAPH_PATH($2):** Dataset path. `e.g., /var/INFINEL/dataset`
 
-### GPU Memory parameter
+### GPU memory parameter
 
 - **GPU_MEMORY_BUF_SIZE:MB($3):** The total GPU memory buffer size used to perform the query including the GPU output buffer. `e.g., 78000`
 
@@ -206,7 +206,7 @@ Parameters Setting Guide
 Evaluation and Expected Results
 --------
 
-We present how to reproduce the experimental results presented in the paper. You can experiment with all the queries used in the paper. The following query was experimented on an A100 GPU with 80 GB of GPU memory. Please note that the **GPU_MEMORY_BUF_SIZE($3)**, **CHUNK_NUM($4)**, and **CHUNK_SIZE($5)** parameters must be changed depending on your installed GPU. If you have a GPU with more than 48 GB of GPU memory, changing only **GPU_MEMORY_BUF_SIZE($3)** should work. The time in parentheses indicates the execution time for each query in our experimental environment.
+We present how to reproduce the experimental results presented in the paper. You can experiment with all the queries used in the paper. The following query was experimented on an A100 GPU with 80 GB of GPU memory. Please note that the **GPU_MEMORY_BUF_SIZE($3)**, **CHUNK_NUM($4)**, and **CHUNK_SIZE($5)** parameters must be changed depending on your installed GPU. The time in parentheses indicates the execution time for each query in our experimental environment.
 
 ### INFINEL query execution time with synthetic datasets (Figure 6a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%206a))
 ```
@@ -267,17 +267,19 @@ $ ./tl-infinel Twitter /var/INFINEL/dataset 78000 13335000 1200 n n y n
 
 ###  INFINEL kernel execution time varying output buffer size (Figure 7a, [expected output](https://github.com/hellogaon/INFINEL/tree/main/results/Figure%207))
 ```
-# GPU output buffer size: 32 GB, 16 GB, 8 GB, 4 GB
+# GPU output buffer size: 64 GB, 32 GB, 16 GB, 8 GB, 4 GB
 # Chunk size: 1.2 KB
 # Total output size: 776.2 GB
 
-# 1) INFINEL(K) with output buffer size of 32 GB (50 sec)
+# 1) INFINEL(K) with output buffer size of 64 GB (50 sec)
+$ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 53335000 1200 n n y n
+# 2) INFINEL(K) with output buffer size of 32 GB (50 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 26667500 1200 n n y n
-# 2) INFINEL(K) with output buffer size of 16 GB (50 sec)
+# 3) INFINEL(K) with output buffer size of 16 GB (50 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 13335000 1200 n n y n
-# 3) INFINEL(K) with output buffer size of 8 GB (51 sec)
+# 4) INFINEL(K) with output buffer size of 8 GB (51 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 6667500 1200 n n y n
-# 4) INFINEL(K) with output buffer size of 4 GB (52 sec)
+# 5) INFINEL(K) with output buffer size of 4 GB (52 sec)
 $ ./tl-infinel RMAT26 /var/INFINEL/dataset 78000 3335000 1200 n n y n
 ```
 
