@@ -14,7 +14,7 @@ Make sure you have installed all of the following prerequisites on your developm
 - CUDA Toolkit 11.6 or later
 - Nvidia Driver 510.39.01 or higher
 
-### Run with docker
+### Run with Docker
 - Docker 24.0.2 or later
 - CUDA Toolkit 11.6 or later
 - Nvidia Driver 510.39.01 or higher
@@ -76,7 +76,7 @@ $ make -j `nproc`
 $ ./tl-infinel RMAT08 ./../dataset/sample 10000 1000000 12 n n n y
 ```
 
-### Run with docker
+### Run with Docker
 **1. Clone the source code**
 ```
 $ git clone https://github.com/hellogaon/INFINEL.git
@@ -97,7 +97,7 @@ list(APPEND CUDA_NVCC_FLAGS
 ```
 $ docker build --tag infinel .
 ```
-**4. Run docker**
+**4. Run Docker**
 ```
 # Change {/your/dataset/path} to your dataset storage path
 
